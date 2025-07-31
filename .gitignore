@@ -209,3 +209,6 @@ __marimo__/
 # Data files
 *.csv
 data/raw/*.csv
+
+# Allow CSV files in reports directory
+!reports/*.csv
