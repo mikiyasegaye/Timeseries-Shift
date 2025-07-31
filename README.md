@@ -360,7 +360,7 @@ from src.utils.statistics import test_stationarity
 
 ## Technologies Used
 
-- **Python**: Data analysis, PyMC3 for Bayesian modeling
+- **Python**: Data analysis, PyMC/PyMC3 for Bayesian modeling
 - **Jupyter**: Interactive analysis and documentation
 - **Flask**: Backend API for dashboard
 - **React**: Frontend dashboard with interactive visualizations
