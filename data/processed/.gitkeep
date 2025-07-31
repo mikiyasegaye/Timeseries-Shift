@@ -1,0 +1,2 @@
+# This file ensures the processed data directory is tracked by git
+# Cleaned and preprocessed data will be stored here 
