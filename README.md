@@ -39,11 +39,18 @@ Timeseries-Shift/
 │
 ├── data/                       # Data files and datasets
 │   ├── raw/                   # Original Brent oil prices data
+│   │   └── BrentOilPrices.csv # Historical Brent oil prices (1987-2022)
 │   ├── processed/             # Cleaned and preprocessed data
 │   └── events/               # Research on key events affecting oil prices
+│       ├── major_oil_events.csv # 16 major events with dates and descriptions
+│       └── event_impacts_analysis.csv # Event impact analysis results
 │
 ├── notebooks/                  # Jupyter notebooks for analysis
 │   ├── 01_foundation_analysis/   # Task 1: Foundation and EDA
+│   │   ├── 01_data_workflow_definition.ipynb # Data loading and basic analysis
+│   │   ├── 02_event_research.ipynb # Event compilation and impact analysis
+│   │   ├── 03_data_properties_analysis.ipynb # Time series properties analysis
+│   │   └── 04_assumptions_limitations.ipynb # Assumptions and communication strategy
 │   ├── 02_change_point_modeling/ # Task 2: Change Point Modeling
 │   └── 03_exploration/          # Additional exploratory analysis
 │
@@ -58,16 +65,19 @@ Timeseries-Shift/
 │   └── static/               # Static assets
 │
 └── reports/                  # Analysis reports and documentation
+    └── events_timeline.csv   # Structured events timeline (16 major events)
 ```
 
 ## Tasks
 
-### Task 1: Laying the Foundation for Analysis
+### Task 1: Laying the Foundation for Analysis (COMPLETED)
 
 - Define data analysis workflow
-- Research and compile event data
-- Understand model and data properties
+- Research and compile event data (16 major events identified)
+- Understand model and data properties (time series analysis complete)
 - Identify assumptions and limitations
+- **Key Findings**: Asian Crisis (1998) lowest price $9.10, Financial Crisis (2008) highest price $143.95, COVID-19 (2020) dramatic collapse
+- **Data Insights**: 9,011 observations, 35-year period, log returns suitable for modeling
 
 ### Task 2: Change Point Modeling and Insight Generation
 
@@ -90,15 +100,20 @@ Timeseries-Shift/
 #### Brent Oil Prices Dataset
 
 - **Source**: Historical daily Brent oil prices
-- **Period**: May 20, 1987 to September 30, 2022
+- **Period**: May 20, 1987 to November 14, 2022
 - **Format**: CSV with Date and Price columns
 - **Price Unit**: USD per barrel
+- **Observations**: 9,011 records
+- **Key Statistics**: Price range $9.10 - $143.95
+- **Data Quality**: No missing values, dual date format handling implemented
 
 #### Events Dataset
 
-- **Content**: Major geopolitical events, OPEC decisions, economic sanctions
-- **Format**: CSV with event details, dates, and impact classifications
+- **Content**: 16 major geopolitical events, OPEC decisions, economic sanctions, and market events
+- **Format**: CSV with event details, dates, categories, and impact classifications
 - **Sources**: Research from news articles, economic reports, and policy documents
+- **Categories**: Geopolitical Conflict, Economic Crisis, OPEC Decision, Market Event, Economic Sanction
+- **Key Events**: Asian Crisis (1998), Financial Crisis (2008), COVID-19 (2020), Russia-Ukraine War (2022)
 
 ### Data Processing Pipeline
 
@@ -111,12 +126,12 @@ Timeseries-Shift/
 
 ### Notebooks Structure
 
-#### Foundation Analysis (Task 1)
+#### Foundation Analysis (Task 1) - COMPLETED
 
-- `01_data_workflow_definition.ipynb`: Define analysis workflow and methodology
-- `02_event_research.ipynb`: Research and compile key events affecting oil prices
-- `03_data_properties_analysis.ipynb`: Analyze time series properties and stationarity
-- `04_assumptions_limitations.ipynb`: Document assumptions and limitations
+- `01_data_workflow_definition.ipynb`: Data loading, cleaning, and basic analysis with crisis period identification
+- `02_event_research.ipynb`: 16 major events compilation with impact analysis and crisis period deep dive
+- `03_data_properties_analysis.ipynb`: Comprehensive time series analysis including stationarity, trends, volatility, and distribution properties
+- `04_assumptions_limitations.ipynb`: Data quality assessment, correlation vs. causation analysis, and stakeholder communication strategy
 
 #### Change Point Modeling (Task 2)
 
@@ -147,166 +162,56 @@ Timeseries-Shift/
 
 ## Source Code Structure
 
+_Note: Source code modules will be implemented in Task 2 and Task 3_
+
 ### Models (`src/models/`)
 
-- `change_point_model.py`: Bayesian change point detection implementation
-- `model_utils.py`: Helper functions for model fitting and evaluation
-- `model_comparison.py`: Tools for comparing different model specifications
+- Bayesian change point detection implementation (planned)
+- Model utilities and comparison tools (planned)
 
 ### Utils (`src/utils/`)
 
-- `data_utils.py`: Data loading and preprocessing utilities
-- `visualization.py`: Plotting and visualization functions
-- `statistics.py`: Statistical analysis and testing functions
-- `event_utils.py`: Event data processing and mapping functions
+- Data loading and preprocessing utilities (planned)
+- Visualization and statistical analysis functions (planned)
 
 ### Data Processing (`src/data_processing/`)
 
-- `cleaner.py`: Data cleaning and validation
-- `feature_engineering.py`: Create derived features (log returns, volatility)
-- `event_mapper.py`: Align events with price data
-- `data_loader.py`: Load and cache datasets
+- Data cleaning and feature engineering (planned)
+- Event mapping and data loading (planned)
 
-### Key Modules Usage
+## Interactive Dashboard (Task 3 - Planned)
 
-#### Change Point Model
-
-```python
-from src.models.change_point_model import BayesianChangePointModel
-```
-
-#### Data Processing
-
-```python
-from src.data_processing.cleaner import clean_oil_prices
-from src.data_processing.feature_engineering import calculate_log_returns
-```
-
-#### Utilities
-
-```python
-from src.utils.visualization import plot_price_series
-from src.utils.statistics import test_stationarity
-```
-
-## Interactive Dashboard
-
-### Features
-
-#### Interactive Visualizations
+### Features (Planned)
 
 - Historical Brent oil prices with event overlays
-- Change point detection results
+- Change point detection results visualization
 - Event impact analysis charts
-- Volatility clustering visualization
+- Interactive filtering and date range selection
 
-#### User Interface
+### Technology Stack (Planned)
 
-- Date range selection and filtering
-- Event category filtering
-- Interactive tooltips and annotations
-- Responsive design for multiple devices
-
-#### Data Exploration
-
-- Drill-down capabilities for specific events
-- Comparison tools for different time periods
-- Export functionality for reports
-
-### Technology Stack
-
-#### Backend
-
-- **Flask**: Python web framework
-- **SQLite/PostgreSQL**: Data storage
-- **Pandas**: Data processing
-- **NumPy**: Numerical computations
-
-#### Frontend
-
-- **React**: JavaScript framework
-- **Recharts/D3.js**: Data visualization
-- **Material-UI**: UI components
-- **Axios**: HTTP client
-
-### API Endpoints
-
-- `GET /api/prices`: Historical oil prices data
-- `GET /api/events`: Key events affecting oil prices
-- `GET /api/change-points`: Change point detection results
-- `GET /api/impact-analysis`: Event impact quantification
+- **Backend**: Flask API
+- **Frontend**: React with Recharts/D3.js
+- **Database**: SQLite/PostgreSQL
 
 ## Reports and Documentation
 
-### Analysis Reports
+### Current Reports
 
-- `task1_report.md`: Task 1 findings and methodology
-- `task2_report.md`: Change point analysis results
-- `final_report.md`: Comprehensive analysis summary
-- `executive_summary.md`: High-level insights for stakeholders
+- `reports/events_timeline.csv`: Structured events timeline with 16 major events (completed)
 
-### Technical Documentation
+### Planned Reports (Tasks 2 & 3)
 
-- `methodology.md`: Detailed methodology and approach
-- `model_specification.md`: Bayesian model details
-- `data_dictionary.md`: Data field definitions and sources
-- `assumptions_limitations.md`: Analysis constraints and caveats
-
-### Presentations
-
-- `presentation_slides.pptx`: PowerPoint presentation
-- `dashboard_demo.md`: Dashboard demonstration guide
-- `stakeholder_briefing.md`: Executive briefing document
-
-### Visualizations
-
-- `figures/`: High-resolution charts and graphs
-- `tables/`: Data tables and summary statistics
-- `interactive/`: Interactive visualization exports
-
-### Report Templates
-
-#### Executive Summary Template
-
-1. **Business Context**: Oil market volatility and decision-making challenges
-2. **Key Findings**: Most significant events and their impacts
-3. **Recommendations**: Actionable insights for stakeholders
-4. **Methodology**: Brief overview of analytical approach
-
-#### Technical Report Template
-
-1. **Introduction**: Problem statement and objectives
-2. **Data and Methods**: Data sources and analytical approach
-3. **Results**: Change point detection and event association
-4. **Discussion**: Interpretation and implications
-5. **Conclusions**: Summary and future work
-
-### Key Deliverables
-
-#### For Investors
-
-- Event impact quantification
-- Risk assessment framework
-- Investment timing recommendations
-
-#### For Policymakers
-
-- Policy effectiveness analysis
-- Economic stability implications
-- Energy security considerations
-
-#### For Energy Companies
-
-- Supply chain risk assessment
-- Operational planning insights
-- Cost management strategies
+- Task 2 analysis results and change point findings
+- Final comprehensive analysis summary
+- Executive summary for stakeholders
+- Technical methodology documentation
 
 ## Getting Started
 
 ### Prerequisites
 
 - Python 3.8+
-- Node.js (for dashboard frontend)
 - Git
 
 ### Installation
@@ -324,49 +229,48 @@ from src.utils.statistics import test_stationarity
    pip install -r requirements.txt
    ```
 
-3. **Start with Task 1**
+3. **Start with Task 1 (Completed)**
 
    ```bash
    jupyter notebook notebooks/01_foundation_analysis/
    ```
 
-4. **Run the dashboard (Task 3)**
+4. **Proceed to Task 2 (Next)**
 
    ```bash
-   # Backend
-   cd dashboard/backend
-   python app.py
-
-   # Frontend (in another terminal)
-   cd dashboard/frontend
-   npm install
-   npm start
+   jupyter notebook notebooks/02_change_point_modeling/
    ```
 
 ## Development Workflow
 
-1. **Data Preparation**: Work in `data/` directories
-2. **Analysis**: Use notebooks in `notebooks/` for exploration
-3. **Modeling**: Implement models in `src/models/`
-4. **Visualization**: Create dashboard in `dashboard/`
-5. **Documentation**: Write reports in `reports/`
+1. **Data Preparation**: Work in `data/` directories ✅
+2. **Analysis**: Use notebooks in `notebooks/` for exploration ✅
+3. **Modeling**: Implement models in `src/models/` (Task 2)
+4. **Visualization**: Create dashboard in `dashboard/` (Task 3)
+5. **Documentation**: Write reports in `reports/` ✅
 
 ## File Naming Conventions
 
-- **Notebooks**: Use descriptive names with task prefixes (e.g., `01_data_preparation.ipynb`)
+- **Notebooks**: Use descriptive names with task prefixes (e.g., `01_data_workflow_definition.ipynb`)
 - **Python Modules**: Use snake_case (e.g., `change_point_model.py`)
-- **Reports**: Use descriptive names with report type (e.g., `task1_report.md`)
+- **Reports**: Use descriptive names with report type (e.g., `interim_report_task1.md`)
 - **Data Files**: Use descriptive names with date stamps if needed
 
 ## Technologies Used
 
-- **Python**: Data analysis, PyMC3 for Bayesian modeling
+### Current (Task 1 - Completed)
+
+- **Python**: Data analysis and time series processing
 - **Jupyter**: Interactive analysis and documentation
+- **NumPy/Pandas**: Data manipulation and analysis
+- **Matplotlib/Seaborn**: Static visualizations
+- **PyMC**: Bayesian modeling (Task 2)
+
+### Planned (Tasks 2 & 3)
+
 - **Flask**: Backend API for dashboard
 - **React**: Frontend dashboard with interactive visualizations
 - **Recharts/D3.js**: Data visualization components
-- **NumPy/Pandas**: Data manipulation and analysis
-- **Matplotlib/Seaborn**: Static visualizations
 - **Plotly/Bokeh**: Interactive visualizations
 
 ## Contributing
