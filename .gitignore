@@ -212,3 +212,6 @@ data/raw/*.csv
 
 # Allow CSV files in reports directory
 !reports/*.csv
+
+# Mac OS
+.DS_Store

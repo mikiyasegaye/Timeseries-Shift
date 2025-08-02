@@ -1,6 +1,6 @@
 Date,Event,Category,Description,Expected_Impact,Data_Validation
 1987-10-19,Black Monday Stock Market Crash,Economic Crisis,Global stock market crash affecting commodity prices,Negative,Price decline observed
-1990-08-02,Iraq Invasion of Kuwait,Geopolitical Conflict,Iraq invades Kuwait, leading to supply concerns,Positive,Price increase observed
+1990-08-02,Iraq Invasion of Kuwait,Geopolitical Conflict,"Iraq invades Kuwait, leading to supply concerns",Positive,Price increase observed
 1991-01-17,Gulf War Begins,Geopolitical Conflict,Operation Desert Storm begins,Positive,Price increase observed
 1997-07-02,Asian Financial Crisis Begins,Economic Crisis,Currency crisis in Thailand spreads across Asia,Negative,Lowest price $9.10 in Dec 1998
 1998-12-10,Oil Price Reaches Historic Low,Market Event,Oil prices hit $9.10 per barrel during the Asian crisis,Negative,Confirmed lowest price in the dataset
