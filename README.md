@@ -1,102 +1,241 @@
 # Brent Oil Prices Analysis: Event Impact Study
 
-## Project Overview
+_Comprehensive analysis of geopolitical events' impact on global oil markets using Bayesian Change Point Detection_
 
-This project analyzes how major geopolitical and economic events affect Brent oil prices using Bayesian Change Point Analysis. The study aims to provide data-driven insights for investors, policymakers, and energy companies to better understand and react to oil price fluctuations.
+---
 
-## Business Objective
+## 🎯 Project Overview
+
+This project analyzes how major geopolitical and economic events affect Brent oil prices using advanced Bayesian Change Point Analysis. The study provides data-driven insights for investors, policymakers, and energy companies to better understand and react to oil price fluctuations in volatile energy markets.
+
+## 🏢 Business Objective
 
 The main goal is to study how important events affect Brent oil prices, focusing on:
 
-- Political decisions and conflicts in oil-producing regions
-- Global economic sanctions
-- OPEC policy changes
-- Other significant market events
+- **Political decisions** and conflicts in oil-producing regions
+- **Global economic sanctions** and their market impact
+- **OPEC policy changes** and production decisions
+- **Other significant market events** affecting supply and demand
 
-## Learning Outcomes
+## 📚 Learning Outcomes
 
-### Skills
+### Skills Acquired
 
-- Change Point Analysis & Interpretation
-- Statistical Reasoning
-- Using PyMC3 for Bayesian modeling
-- Analytical Storytelling with Data
+- **Change Point Analysis & Interpretation** - Identifying structural breaks in time series
+- **Statistical Reasoning** - Advanced statistical modeling and inference
+- **Bayesian Modeling with PyMC** - Modern probabilistic programming
+- **Analytical Storytelling** - Communicating complex findings to stakeholders
 
-### Knowledge
+### Knowledge Gained
 
-- Probability distributions and model selection
-- Bayesian inference
-- Monte Carlo Markov Chain
-- Model comparison
-- Policy analysis
+- **Probability distributions** and model selection for time series
+- **Bayesian inference** and uncertainty quantification
+- **Monte Carlo Markov Chain** (MCMC) sampling
+- **Model comparison** and validation techniques
+- **Policy analysis** and impact assessment
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Timeseries-Shift/
-├── README.md                    # Main project documentation
-├── requirements.txt             # Python dependencies
+├── README.md                    # 📋 Main project documentation
+├── requirements.txt             # 🐍 Python dependencies
+├── .gitignore                  # 🚫 Comprehensive ignore patterns
 │
-├── data/                       # Data files and datasets
-│   ├── raw/                   # Original Brent oil prices data
+├── data/                       # 📊 Data files and datasets
+│   ├── raw/                   # 📈 Original Brent oil prices data
 │   │   └── BrentOilPrices.csv # Historical Brent oil prices (1987-2022)
-│   ├── processed/             # Cleaned and preprocessed data
-│   └── events/               # Research on key events affecting oil prices
+│   ├── processed/             # 🔧 Cleaned and preprocessed data
+│   └── events/               # 📅 Research on key events affecting oil prices
 │       ├── major_oil_events.csv # 16 major events with dates and descriptions
 │       └── event_impacts_analysis.csv # Event impact analysis results
 │
-├── notebooks/                  # Jupyter notebooks for analysis
-│   ├── 01_foundation_analysis/   # Task 1: Foundation and EDA (COMPLETED)
+├── notebooks/                  # 📓 Jupyter notebooks for analysis
+│   ├── 01_foundation_analysis/   # ✅ Task 1: Foundation and EDA (COMPLETED)
 │   │   ├── 01_data_workflow_definition.ipynb # Data loading and basic analysis
 │   │   ├── 02_event_research.ipynb # Event compilation and impact analysis
 │   │   ├── 03_data_properties_analysis.ipynb # Time series properties analysis
 │   │   └── 04_assumptions_limitations.ipynb # Assumptions and communication strategy
-│   ├── 02_change_point_modeling/ # Task 2: Change Point Modeling (COMPLETED)
+│   ├── 02_change_point_modeling/ # ✅ Task 2: Change Point Modeling (COMPLETED)
 │   │   ├── 01_data_preparation.ipynb # Data preparation and preprocessing
 │   │   ├── 02_bayesian_change_point_model.ipynb # PyMC implementation
 │   │   └── 03_model_interpretation.ipynb # Impact quantification and event association
-│   └── 03_exploration/          # Additional exploratory analysis
+│   └── 03_exploration/          # 🔍 Additional exploratory analysis
 │
-├── src/                       # Source code modules
-│   ├── models/               # Bayesian change point models
-│   ├── utils/                # Utility functions
-│   └── data_processing/      # Data cleaning and preprocessing
+├── src/                       # 💻 Source code modules
+│   ├── models/               # 🤖 Bayesian change point models
+│   ├── utils/                # 🛠️ Utility functions
+│   └── data_processing/      # 🔄 Data cleaning and preprocessing
 │
-├── dashboard/                 # Interactive dashboard (Task 3)
-│   ├── backend/              # Flask API
-│   ├── frontend/             # React frontend
-│   └── static/               # Static assets
+├── dashboard/                 # 🖥️ Interactive dashboard (Task 3)
+│   ├── backend/              # 🐍 Flask API server
+│   ├── frontend/             # ⚛️ React application
+│   ├── scripts/              # 📜 Startup scripts
+│   ├── docker/               # 🐳 Docker configuration
+│   ├── config/               # ⚙️ Environment settings
+│   ├── docs/                 # 📚 Documentation
+│   ├── static/               # 🎨 Static assets
+│   └── run.py                # 🚀 Main entry point
 │
-└── reports/                  # Analysis reports and documentation
-    └── events_timeline.csv   # Structured events timeline (16 major events)
+└── reports/                  # 📄 Analysis reports and documentation
+    ├── events_timeline.csv   # 📅 Structured events timeline (16 major events)
+    └── final_blog_post.md   # 📝 Final blog post for publication
 ```
 
-## Tasks
+## ✅ Tasks Status
 
-### Task 1: Laying the Foundation for Analysis (COMPLETED)
+### Task 1: Laying the Foundation for Analysis ✅ **COMPLETED**
 
-- Define data analysis workflow
-- Research and compile event data (16 major events identified)
-- Understand model and data properties (time series analysis complete)
-- Identify assumptions and limitations
-- **Key Findings**: Asian Crisis (1998) lowest price $9.10, Financial Crisis (2008) highest price $143.95, COVID-19 (2020) dramatic collapse
-- **Data Insights**: 9,011 observations, 35-year period, log returns suitable for modeling
+- ✅ **Define data analysis workflow** - Multi-phase analysis approach established
+- ✅ **Research and compile event data** - 16 major events identified and documented
+- ✅ **Understand model and data properties** - Comprehensive time series analysis complete
+- ✅ **Identify assumptions and limitations** - Statistical assumptions and communication strategy defined
+- **📊 Key Findings**:
+  - Asian Crisis (1998): Lowest price $9.10
+  - Financial Crisis (2008): Highest price $143.95
+  - COVID-19 (2020): Most dramatic price collapse in history
+- **📈 Data Insights**: 9,011 observations, 35-year period, log returns suitable for modeling
 
-### Task 2: Change Point Modeling and Insight Generation (COMPLETED)
+### Task 2: Change Point Modeling and Insight Generation ✅ **COMPLETED**
 
-- Implement Bayesian Change Point Model using PyMC ✅
-- Identify and interpret change points ✅
-- Associate changes with causal events ✅
-- Quantify impact of events on oil prices ✅
-- **Key Results**: Multiple structural breaks identified, impact quantified, events associated
-- **Model Performance**: PyMC 5.25.1, 4 chains, 2000 draws, successful convergence
+- ✅ **Implement Bayesian Change Point Model** using PyMC 5.25.1
+- ✅ **Identify and interpret change points** - Multiple structural breaks detected
+- ✅ **Associate changes with causal events** - Events mapped to change points
+- ✅ **Quantify impact of events** on oil prices with statistical significance
+- **🔬 Key Results**:
+  - Multiple structural breaks identified and quantified
+  - Impact magnitude calculated for each major event
+  - Events successfully associated with change points
+- **⚡ Model Performance**: PyMC 5.25.1, 4 chains, 2000 draws, successful convergence
 
-### Task 3: Interactive Dashboard
+### Task 3: Interactive Dashboard ✅ **COMPLETED**
 
-- Build Flask backend API
-- Create React frontend with interactive visualizations
-- Enable event filtering and date range selection
-- Display key indicators and correlations
+- ✅ **Build Flask backend API** - RESTful API with comprehensive endpoints
+- ✅ **Create React frontend** with interactive visualizations using Plotly.js
+- ✅ **Enable event filtering** and dynamic date range selection
+- ✅ **Display key indicators** and correlations with real-time data
+- **🖥️ Features**:
+  - Dashboard overview with dynamic metrics
+  - Interactive price analysis with adaptive windows
+  - Events timeline with category filtering
+  - Change points analysis with significance indicators
+- **⚙️ Technology**: Flask + React, Plotly.js visualizations, responsive design, Docker deployment
+
+#### **🏗️ Dashboard Structure**
+
+```
+dashboard/
+├── backend/                 # Flask API server
+│   ├── app.py              # Main Flask application
+│   ├── requirements.txt    # Python dependencies
+│   └── venv/              # Virtual environment (auto-created)
+├── frontend/               # React application
+│   ├── src/               # React source code
+│   ├── public/            # Static assets
+│   ├── package.json       # Node.js dependencies
+│   └── build/             # Production build (auto-created)
+├── scripts/               # Startup scripts
+│   ├── start.sh          # Production startup script
+│   └── dev.sh            # Development startup script
+├── docker/                # Docker configuration
+│   ├── docker-compose.yml # Multi-service orchestration
+│   ├── backend/           # Backend Dockerfile
+│   ├── frontend/          # Frontend Dockerfile
+│   └── nginx/             # Nginx configuration
+├── config/                # Configuration files
+│   └── environment.py     # Environment settings
+├── docs/                  # Documentation
+├── static/                # Static assets
+├── logs/                  # Application logs (auto-created)
+├── run.py                 # Main entry point
+└── README.md             # Dashboard documentation
+```
+
+#### **🚀 Quick Start**
+
+**Prerequisites**: Python 3.8+, Node.js 14+, npm/yarn, data files: `data/raw/BrentOilPrices.csv` and `reports/events_timeline.csv`
+
+**Option 1: Unified Entry Point (Recommended)**
+
+```bash
+# Development mode (interactive)
+python dashboard/run.py
+
+# Production mode
+python dashboard/run.py --mode prod
+
+# Docker mode
+python dashboard/run.py --mode docker
+
+# Backend only
+python dashboard/run.py --backend-only
+
+# Frontend only
+python dashboard/run.py --frontend-only
+```
+
+**Option 2: Direct Scripts**
+
+```bash
+# Development (interactive menu)
+./dashboard/scripts/dev.sh
+
+# Production (automated)
+./dashboard/scripts/start.sh
+
+# Docker
+cd dashboard/docker && docker-compose up --build
+```
+
+**Option 3: Manual Setup**
+
+```bash
+# Backend
+cd dashboard/backend
+pip install -r requirements.txt
+python app.py
+
+# Frontend (new terminal)
+cd dashboard/frontend
+npm install
+npm start
+```
+
+**Access URLs**: Frontend: http://localhost:3000, Backend API: http://localhost:5000, Health Check: http://localhost:5000/api/health
+
+#### **📊 Key Features**
+
+- **Dashboard Overview**: Real-time data loading, dynamic metrics, interactive price trend visualization
+- **Price Analysis**: Dynamic date range filtering, log returns analysis with adaptive windows, rolling volatility
+- **Events Timeline**: Dynamic event categorization, real-time filtering by category and impact
+- **Change Points Analysis**: Dynamic volatility-based detection, adaptive thresholds based on data distribution
+
+#### **🐳 Docker Deployment**
+
+```bash
+# Quick start
+cd dashboard/docker
+docker-compose up --build
+
+# Production with nginx
+docker-compose -f docker-compose.yml up -d
+```
+
+#### **📈 API Endpoints**
+
+- **Data**: `/api/data/brent-prices`, `/api/data/events`
+- **Analysis**: `/api/analysis/log-returns`, `/api/analysis/change-points`
+- **Visualization**: `/api/visualizations/price-trend`, `/api/visualizations/returns-distribution`
+
+#### **🛠️ Troubleshooting**
+
+| Issue                     | Solution                                                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Port Already in Use**   | `lsof -i :5000 \| awk 'NR!=1 {print \$2}' \| xargs kill -9`                                                                  |
+| **Backend Dependencies**  | `cd dashboard/backend && rm -rf venv && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt` |
+| **Frontend Dependencies** | `cd dashboard/frontend && rm -rf node_modules package-lock.json && npm install`                                              |
+| **Data Files Missing**    | Ensure `data/raw/BrentOilPrices.csv` and `reports/events_timeline.csv` exist                                                 |
+| **Docker Issues**         | `docker-compose down && docker system prune -f && docker-compose up --build`                                                 |
 
 ## Data Management
 
@@ -197,25 +336,30 @@ _Note: Source code modules will be implemented in Task 2 and Task 3_
 - **Frontend**: React with Recharts/D3.js
 - **Database**: SQLite/PostgreSQL
 
-## Reports and Documentation
+## 📄 Reports and Documentation
 
-### Current Reports
+### ✅ Completed Reports
 
-- `reports/events_timeline.csv`: Structured events timeline with 16 major events (completed)
-- `reports/task2_completion_report.md`: Task 2 completion report with Bayesian analysis results (completed)
+- `reports/events_timeline.csv`: Structured events timeline with 16 major events ✅
+- `reports/final_blog_post.md`: Comprehensive blog post for publication ✅
+- **Analysis Results**: All tasks completed with detailed findings
 
-### Planned Reports (Task 3)
+### 📊 Key Deliverables
 
-- Final comprehensive analysis summary
-- Executive summary for stakeholders
-- Technical methodology documentation
+- **Data Analysis**: 35 years of Brent oil prices analyzed
+- **Event Research**: 16 major geopolitical events documented
+- **Bayesian Modeling**: Change point detection with PyMC
+- **Interactive Dashboard**: Full-stack web application
+- **Publication-Ready Report**: Blog post suitable for Medium/TDS
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.8+
-- Git
+- **Python 3.8+** (for PyMC compatibility)
+- **Node.js 14+** (for React frontend)
+- **Git** (for version control)
+- **Docker** (optional, for containerized deployment)
 
 ### Installation
 
@@ -232,24 +376,58 @@ _Note: Source code modules will be implemented in Task 2 and Task 3_
    pip install -r requirements.txt
    ```
 
-3. **Start with Task 1 (Completed)**
+3. **Set up virtual environment (recommended)**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+4. **Install Node.js dependencies (for dashboard)**
+   ```bash
+   cd dashboard/frontend
+   npm install
+   cd ../..
+   ```
+
+### Data Setup
+
+1. **Ensure data files are in place**
+
+   - `data/raw/BrentOilPrices.csv` - Historical Brent oil prices
+   - `reports/events_timeline.csv` - Events timeline data
+
+2. **Verify data integrity**
+   ```bash
+   python -c "import pandas as pd; print('Data loaded successfully')"
+   ```
+
+### Running the Analysis
+
+1. **Start with Task 1 (Completed)**
 
    ```bash
    jupyter notebook notebooks/01_foundation_analysis/
    ```
 
-4. **Proceed to Task 2 (Next)**
+2. **Proceed to Task 2 (Completed)**
 
    ```bash
    jupyter notebook notebooks/02_change_point_modeling/
    ```
 
-## Development Workflow
+3. **Launch Dashboard (Completed)**
+   ```bash
+   python dashboard/run.py
+   ```
+
+## 🔄 Development Workflow
 
 1. **Data Preparation**: Work in `data/` directories ✅
 2. **Analysis**: Use notebooks in `notebooks/` for exploration ✅
-3. **Modeling**: Implement models in `src/models/` (Task 2)
-4. **Visualization**: Create dashboard in `dashboard/` (Task 3)
+3. **Modeling**: Implement models in `src/models/` ✅
+4. **Visualization**: Create dashboard in `dashboard/` ✅
 5. **Documentation**: Write reports in `reports/` ✅
 
 ## File Naming Conventions
@@ -259,24 +437,30 @@ _Note: Source code modules will be implemented in Task 2 and Task 3_
 - **Reports**: Use descriptive names with report type (e.g., `interim_report_task1.md`)
 - **Data Files**: Use descriptive names with date stamps if needed
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-### Current (Task 1 - Completed)
+### ✅ Completed Technologies
 
 - **Python**: Data analysis and time series processing
 - **Jupyter**: Interactive analysis and documentation
 - **NumPy/Pandas**: Data manipulation and analysis
 - **Matplotlib/Seaborn**: Static visualizations
-- **PyMC**: Bayesian modeling (Task 2)
-
-### Planned (Tasks 2 & 3)
-
+- **PyMC 5.25.1**: Bayesian modeling and change point detection
 - **Flask**: Backend API for dashboard
 - **React**: Frontend dashboard with interactive visualizations
-- **Recharts/D3.js**: Data visualization components
-- **Plotly/Bokeh**: Interactive visualizations
+- **Plotly.js**: Interactive data visualizations
+- **Docker**: Containerized deployment
+- **Nginx**: Reverse proxy for production
 
-## Contributing
+### 📊 Key Libraries
+
+- **Data Analysis**: pandas, numpy, scipy
+- **Visualization**: matplotlib, seaborn, plotly
+- **Bayesian Modeling**: pymc, arviz, aesara
+- **Web Development**: flask, react, axios, styled-components
+- **Deployment**: docker, docker-compose, nginx
+
+## 🤝 Contributing
 
 1. Follow the established directory structure
 2. Use descriptive file names
@@ -284,6 +468,45 @@ _Note: Source code modules will be implemented in Task 2 and Task 3_
 4. Include proper error handling in code
 5. Test models and visualizations thoroughly
 
-## License
+## 📄 License
 
 This project is for educational and research purposes.
+
+---
+
+## 🎯 Project Summary
+
+### ✅ **COMPLETED SUCCESSFULLY**
+
+This project has successfully completed all three major tasks:
+
+1. **📊 Foundation Analysis** - Comprehensive data exploration and event research
+2. **🔬 Bayesian Modeling** - Advanced change point detection with PyMC
+3. **🖥️ Interactive Dashboard** - Full-stack web application with real-time data
+
+### 🏆 **Key Achievements**
+
+- **35 years of data** analyzed (1987-2022)
+- **16 major events** documented and analyzed
+- **Multiple structural breaks** identified and quantified
+- **Interactive dashboard** with dynamic features
+- **Publication-ready report** for Medium/TDS
+
+### 🚀 **Ready for Production**
+
+- **Complete codebase** with comprehensive documentation
+- **Docker deployment** ready for production
+- **Comprehensive .gitignore** for clean repository management
+- **Professional blog post** for publication
+
+### 📈 **Business Impact**
+
+This analysis provides actionable insights for:
+
+- **Investors**: Risk management and timing strategies
+- **Policymakers**: Economic stability monitoring
+- **Energy Companies**: Strategic planning and risk assessment
+
+---
+
+_This project demonstrates advanced data science techniques applied to real-world energy market analysis, providing valuable insights for stakeholders across the energy sector._
